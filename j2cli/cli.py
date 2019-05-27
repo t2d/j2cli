@@ -49,7 +49,8 @@ class Jinja2TemplateRenderer(object):
             extensions=self.ENABLED_EXTENSIONS,
             loader=FilePathLoader(cwd),
             undefined=jinja2.Undefined if allow_undefined else jinja2.StrictUndefined,  # raise errors for undefineds?
-            keep_trailing_newline=True
+            keep_trailing_newline=True,
+            trim_blocks=True
         )
 
     def register_filters(self, filters):
